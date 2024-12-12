@@ -68,33 +68,3 @@ plt.legend(["Cash", "Credit Card", 'Debit Card'], ncol=3, bbox_to_anchor=(0.68, 
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-
-# Generate Conclusions Based on Data
-
-# Total Average Spending (based on selected filters)
-avg_spending = df['total'].mean()
-st.write(f"### Average Spending: ₺ {avg_spending:.2f}")
-
-# Additional Insights (Example: Spending based on Payment Method)
-payment_method_spending = df.groupby('payment_method')['total'].mean()
-st.write("### Average Spending by Payment Method:")
-st.write(payment_method_spending)
-
-# Gender-based Insights
-if 'gender' in df.columns:
-    gender_spending = df.groupby('gender')['total'].mean()
-    st.write("### Average Spending by Gender:")
-    st.write(gender_spending)
-
-# Category Insights (if available)
-if category_option != 'All' and category_option in df.columns:
-    category_spending = df.groupby('category')['total'].mean()
-    st.write(f"### Average Spending in Category: {category_option}")
-    st.write(category_spending)
-
-# Shopping Mall Insights (if available)
-if mall_option != 'All' and mall_option in df.columns:
-    mall_spending = df.groupby('shopping_mall')['total'].mean()
-    st.write(f"### Average Spending at {mall_option}:")
-    st.write(mall_spending)
-
