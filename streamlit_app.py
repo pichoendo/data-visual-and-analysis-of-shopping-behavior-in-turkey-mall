@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Streamlit Title
-st.title("👜Analyzing Shopping Behavior <br> in Istanbul Mall 🕌", unsafe_allow_html=True)
+st.title("👜Analyzing Shopping Behavior")
+st.title("in Istanbul Mall 🕌")
 
 # Load Data
 df = pd.read_csv('data/data.csv', usecols=[
